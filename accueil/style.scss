@@ -177,11 +177,13 @@ ul {
     min-height: 100vh;
     background: #000;
     overflow: hidden;
-    z-index: 10;
-    animation: center 3s linear;
-    position: absolute;
+    z-index: 0;
+   animation: center 3s linear;
+    position: fixed;
     opacity: 0;
     width: 100%;
+    height: 100%;
+    top: 0;
 
 .ring {
     position: absolute;
@@ -238,12 +240,12 @@ ul {
  @keyframes center {
     0%{
         opacity: 1;
-
+        z-index: 10;
     }
     100%{
 
        opacity: 0;
-       
+       z-index: 0;
     }
  }
 /******************************************************************************************/
