@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+/***Roboto700**/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/***Roboto300**/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+/***Roboto500**/
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/****Shrikhand400****/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/***************************************************************************************/
+$primary-color: #F6F6F6;
+$secondary-color: #FFFFFF;
+$footer-color: #353535;
+$text-center: center;
+$font-size14: 14px;
+$font-size16: 16px;
+$font-size18: 18px;
+$font-weight200: 200;
+
+/***************************************************************************************/
+@mixin nav-desktop {
+
+    @media (min-width:912px) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        width: 18%;
+    }
+}
+
+/***************************************************************************************/
+@mixin footer-desktop {
+    background: $footer-color;
+    color: #FFFFFF;
+    padding-left: 15px;
+    padding: 72px 0 20px;
+
+    .contact {
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: $secondary-color;
+    }
+
+    @media (min-width:912px) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+
+    .para-logo {
+        font-family: 'Shrikhand', cursive;
+        padding: 16px 0px;
+
+        @media (min-width:912px) {
+            padding: 0 50px;
+            font-size: $font-size18;
+        }
+    }
+
+    ul {
+        list-style: none;
+        font-size: $font-size14;
+        @extend %padding-bottom;
+
+        @media (min-width:912px) {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    }
+
+    li {
+        @extend %padding-bottom;
+
+        @media (min-width:912px) {
+            padding-right: 20px;
+        }
+    }
+}
+
+/***************************************************************************************/
+@mixin btn-menu {
+    background: linear-gradient(193.33deg, #FF79DA -11.44%, #9356DC 123.93%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    color: $secondary-color;
+    padding: 15px 50px;
+    border: none;
+    margin: 30px 0 40px 63px;
+    cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+        color: #ffffffcf;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/***************************************************************************************/
+@mixin main-titre {
+    .h3-et-coeur {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: baseline;
+
+        h3 {
+            font-family: 'Shrikhand', cursive;
+            font-style: italic;
+            padding-top: 32px;
+            font-size: 24px;
+        }
+    }
+}
+
+/***************************************************************************************/
+@mixin choix {
+
+    background: $secondary-color;
+    width: 100%;
+    border: none;
+    text-align: left;
+    margin-bottom: 12px;
+    box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+    border-radius: 15.0431px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    @extend %trois-petit-point;
+
+    &:hover {
+        .checkbox {
+            margin-right: 0;
+        }
+    }
+
+    .description {
+        padding: 10px;
+        @extend %trois-petit-point;
+    }
+
+    .price {
+        padding-right: 19px;
+        padding-top: 25px;
+    }
+
+    .content-price-checkbox {
+        display: flex;
+    }
+
+    .checkbox {
+        margin-right: -67px;
+        background-color: #99E2D0;
+        color: white;
+        padding: 20px;
+        transition: margin-right 500ms ease-in-out;
+        border-radius: 0px 15px 15px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .description-top {
+        padding-bottom: 7px;
+        font-size: 16px;
+        @extend %trois-petit-point;
+    }
+
+    .description-bottom {
+        font-size: $font-size14;
+        font-weight: 300;
+        @extend %trois-petit-point;
+
+        @media (min-width:912px) {
+            font-size: $font-size16;
+        }
+    }
+}
+
+/***************************************************************************************/
+@mixin footer {
+    background: $footer-color;
+    color: #FFFFFF;
+    padding-left: 25px;
+
+    p {
+        font-family: 'Shrikhand', cursive;
+        padding: 16px 0px;
+    }
+
+    ul {
+        list-style: none;
+        font-size: $font-size14;
+        @extend %padding-bottom;
+    }
+
+    li {
+        @extend %padding-bottom;
+    }
+}
+
+/***************************************************************************************/
+
+%title-choix {
+    .title {
+        @media (min-width:912px) {
+            margin: 0;
+        }
+    }
+}
+
+%media-query-choix {
+    @media (min-width:912px) {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+%trois-petit-point {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/***************************************************************************************/
+nav {
+    .fleche {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 7px 0 7px 0;
+
+        .lien-vers-accueil {
+            color: black;
+            text-decoration: none;
+        }
+    }
+
+    i.fa-solid.fa-arrow-left {
+        padding-left: 30px;
+    }
+
+    .photo-logo {
+        width: 50%;
+        margin-left: 52px;
+        margin-right: 57px;
+        @include nav-desktop;
+    }
+
+    .photo-accueil {
+        width: 100%;
+        height: 231px;
+
+        @media (min-width:912px) {
+            height: 564px;
+        }
+    }
+}
+
+main {
+    background: $primary-color;
+    border-radius: 40px 40px 0px 0px;
+    position: relative;
+    margin-top: -40px;
+
+    @media (min-width:912px) {
+        margin-top: -60px;
+        width: 70%;
+        margin-left: 212px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .h3-et-coeur {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: flex-end;
+
+        span.fa-stack.fa-1x {
+            padding-bottom: 37px;
+        }
+
+        i.fa-regular.fa-heart.fa-stack-1x.fa-inverse {
+            text-align: right;
+            color: black;
+            padding-right: 3px;
+        }
+
+        i.fa-solid.fa-heart.fa-stack-1x {
+            text-align: inherit;
+            padding-left: 21px;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: transform, background-image 1s;
+            cursor: pointer;
+
+            &:hover {
+                background-image: linear-gradient(#FF79DA, #9356DC);
+                transform: scale(1);
+            }
+        }
+
+        @media (min-width:912px) {
+            justify-content: center;
+        }
+
+        h3 {
+            font-family: 'Shrikhand', cursive;
+            font-style: italic;
+            padding-top: 32px;
+            font-size: 24px;
+
+            @media (min-width:912px) {
+                padding-right: 24px;
+                font-size: 28px;
+            }
+        }
+
+    }
+
+    .title {
+        &:after {
+            content: "";
+            background: #99E2D0;
+            height: 3px;
+            width: 40px;
+            display: block;
+            margin-top: 4px;
+        }
+    }
+}
+
+.entrées {
+    padding: 0 8px;
+    font-size: 16px;
+    padding: 24px 0 15px 13px;
+    -webkit-animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+
+    @media (min-width:912px) {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .title {
+        @media (min-width:912px) {
+            margin: 0;
+        }
+    }
+}
+
+@-webkit-keyframes puff-in-center {
+    0% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes puff-in-center {
+    0% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.choix {
+    @include choix;
+}
+
+.plats {
+    padding: 0 8px;
+    -webkit-animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+
+    .title {
+        font-size: 16px;
+        padding: 24px 0 15px 13px;
+    }
+
+    @extend %media-query-choix;
+    @extend %title-choix;
+    @include main-titre;
+
+}
+
+.desserts {
+    padding: 0 8px;
+    -webkit-animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+
+    .title {
+        font-size: 16px;
+        padding: 24px 0 15px 13px;
+    }
+
+    @extend %media-query-choix;
+    @extend %title-choix;
+    @include main-titre;
+}
+
+.boutton-commander {
+    @include btn-menu;
+
+    @media (min-width:912px) {
+        margin-left: 200px;
+    }
+
+}
+
+
+%padding-bottom {
+    padding-bottom: 10px;
+}
+
+footer {
+    @include footer-desktop;
+}

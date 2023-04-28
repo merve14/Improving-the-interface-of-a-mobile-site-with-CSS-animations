@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/***Roboto700**/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/***Roboto300**/
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/****Shrikhand400****/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/**************************************************************/
+$primary-color: #F6F6F6;
+$secondary-color: #FFFFFF;
+$footer-color: #353535;
+$text-center: center;
+$font-size14: 14px;
+$font-size16: 16px;
+$font-size18: 18px;
+
+/**************************************************************/
+@mixin nav {
+    nav {
+
+        img {
+            width: 50%;
+            margin: 15px 0 5px 74px;
+            background: $secondary-color;
+        }
+
+        p {
+            background: #EAEAEA;
+            width: 100%;
+            padding: 15px 91px;
+            box-shadow: inset 0px 28px 11px -30px rgba(0, 0, 0, 0.28);
+            font-size: 14px;
+        }
+
+        i.fa-sharp.fa-solid.fa-location-dot {
+            padding-right: 13px;
+        }
+    }
+}
+
+/******************************************************************************************/
+@mixin btn {
+    background: linear-gradient(193.33deg, #FF79DA -11.44%, #9356DC 123.93%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    color: $secondary-color;
+    padding: 13px 18px;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+
+    }
+}
+
+/******************************************************************************************/
+@mixin title {
+    padding: 48px 0 30px 20px;
+}
+
+/******************************************************************************************/
+@mixin footer {
+    background: $footer-color;
+    color: #FFFFFF;
+    padding-left: 25px;
+
+    p {
+        font-family: 'Shrikhand', cursive;
+        padding: 16px 0px;
+    }
+
+    ul {
+        list-style: none;
+        font-size: $font-size14;
+        @extend padding-bottom;
+    }
+
+    li {
+        @extend padding-bottom;
+
+    }
+
+}
+
+ul {
+    i.fa-solid.fa-utensils {
+        padding-right: 10px;
+    }
+
+    i.fa-solid.fa-handshake-angle {
+        padding-right: 5px;
+    }
+}
+
+/******************************************************************************************/
+@mixin nav-desktop {
+
+    img {
+        width: 50%;
+        margin: 15px 0 5px 74px;
+        background: $secondary-color;
+
+        @media (min-width:912px) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            width: 18%;
+        }
+    }
+}
+
+/******************************************************************************************/
+@mixin footer-desktop {
+
+    footer {
+        background: $footer-color;
+        color: #FFFFFF;
+        padding-left: 15px;
+        padding: 72px 0 20px;
+
+        @media (min-width:912px) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        }
+
+        .para-logo {
+            font-family: 'Shrikhand', cursive;
+            padding: 16px 0px;
+
+            @media (min-width:912px) {
+                padding: 0 50px;
+                font-size: $font-size18;
+            }
+        }
+
+        ul {
+            list-style: none;
+            font-size: $font-size14;
+            @extend %padding-bottom;
+
+            @media (min-width:912px) {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+            }
+        }
+
+        li {
+            @extend %padding-bottom;
+
+            @media (min-width:912px) {
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+/*************************************************************************************/
+.center {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+    z-index: 10;
+    animation: center 3s linear;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+
+.ring {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: ring 1s linear infinite;
+}
+
+@keyframes ring {
+    0% {
+
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #e65c00;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #18b201;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+    }
+}
+
+.ring:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, .3);
+}
+
+.loader {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Shrikhand', cursive;
+    letter-spacing: 1px;
+    line-height: 200px;
+    animation: text 3s ease-in-out infinite;
+}
+
+@keyframes text {
+    50% {
+        color: black;
+    }
+}
+ }
+ @keyframes center {
+    0%{
+        opacity: 1;
+
+    }
+    100%{
+
+       opacity: 0;
+       
+    }
+ }
+/******************************************************************************************/
+nav {
+
+    img {
+        width: 50%;
+        margin: 15px 0 5px 74px;
+        background: $secondary-color;
+
+        @media (min-width:912px) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            width: 18%;
+        }
+    }
+
+    p {
+        background: #EAEAEA;
+        width: 100%;
+        padding: 15px 91px;
+        box-shadow: inset 0px 28px 11px -30px rgba(0, 0, 0, 0.28);
+        font-size: 14px;
+
+        @media (min-width:912px) {
+            text-align: center;
+            font-size: $font-size16;
+        }
+
+    }
+
+    i.fa-sharp.fa-solid.fa-location-dot {
+        padding-right: 13px;
+    }
+
+}
+
+/******************************************************************************************/
+header {
+    background: $primary-color;
+    text-align: center;
+
+    h3 {
+        padding: 20px 44px 20px 42px;
+
+        @media (min-width:912px) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        padding: 0 18px 18px;
+        font-size: $font-size14;
+        font-weight: 300;
+
+        @media (min-width:912px) {
+            font-size: $font-size16;
+        }
+    }
+
+    button {
+        @include btn;
+
+    }
+}
+
+/******************************************************************************************/
+.fonctionnement {
+    padding: 20px;
+
+    @media (min-width:912px) {
+        display: flex;
+        flex-direction: column;
+        padding-left: 46px;
+    }
+}
+
+.boutton-fonctionnement {
+    @media (min-width:912px) {
+        display: flex;
+        flex-direction: row;
+        padding-right: 37px;
+        justify-content: center;
+        align-items: baseline;
+    }
+}
+
+.h3-fonctionnement {
+    @include title;
+
+    @media (min-width:912px) {
+        margin-left: 80px;
+        font-size: 24px;
+    }
+
+}
+
+/******************************************************************************************/
+.btn {
+    background: #F7F7F7;
+    padding: 20px;
+    border: none;
+    margin-bottom: 25px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    width: 100%;
+    position: relative;
+
+    @media (min-width:912px) {
+        width: 25%;
+        padding: 26px;
+        margin-right: 37px;
+    }
+
+    .circle-number {
+        position: absolute;
+        display: inline-block;
+        left: -10px;
+        top: 20px;
+        background: #9356DC;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 100%;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        animation: none;
+
+    }
+
+    i.fa-solid.fa-mobile-screen-button {
+        @extend %pr25px;
+        @extend %pl10px
+    }
+
+    i.fa-solid.fa-list-ul {
+        @extend %pr25px;
+        @extend %pl10px
+    }
+
+    i.fa-solid.fa-store {
+        @extend %pr25px;
+        @extend %pl10px
+    }
+
+    &.btn3 {
+        margin-bottom: 60px;
+    }
+}
+
+/******************************************************************************************/
+main {
+    background: $primary-color;
+    padding-bottom: 66px;
+
+    .lien-vers-menu {
+        color: black;
+        text-decoration: none;
+    }
+
+    .restaurants {
+        @media (min-width:912px) {
+            display: flex;
+            row-gap: 30px;
+            column-gap: 30px;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    }
+
+    .h3-restaurants {
+        @include title;
+
+        @media (min-width:912px) {
+            font-size: 24px;
+            padding-left: 118px;
+        }
+    }
+
+    .card {
+        background: $secondary-color;
+        margin: 0 13px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+
+        @media (min-width:912px) {
+            width: 40%;
+        }
+
+        .tag-nouveau {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #99E2D0;
+            color: #008766;
+            font-size: 14px;
+            padding: 7px;
+            border-radius: 2px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15)
+        }
+    }
+
+}
+
+/******************************************************************************************/
+.card :hover {
+    cursor: pointer;
+}
+
+.h4-icon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+i.fa-regular.fa-heart {
+    padding-right: 20px;
+}
+
+i.fa-regular.fa-heart.fa-stack-1x.fa-inverse {
+    text-align: right;
+    color: black;
+
+}
+
+i.fa-solid.fa-heart.fa-stack-1x {
+    text-align: inherit;
+    padding-left: 4px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: transform, background-image 1s;
+
+    &:hover {
+        background-image: linear-gradient(#FF79DA, #9356DC);
+        transform: scale(1);
+    }
+}
+
+
+/******************************************************************************************/
+.card {
+    img {
+        width: 100%;
+        height: 160px;
+        border-radius: 15px 15px 0 0;
+        object-fit: cover;
+
+        @media (min-width:912px) {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    h4 {
+        padding: 16px 0 5px 13px;
+
+        @media (min-width:912px) {
+            font-size: $font-size18;
+        }
+
+    }
+
+    p {
+        font-weight: 300;
+        padding: 0 0 15px 13px;
+    }
+}
+
+/******************************************************************************************/
+%padding-bottom {
+    padding-bottom: 10px;
+}
+
+%pr25px {
+    padding-right: 25px;
+}
+
+%pl10px {
+    padding-left: 10px;
+}
+
+/******************************************************************************************/
+footer {
+    background: $footer-color;
+    color: #FFFFFF;
+    padding-left: 15px;
+    padding: 72px 0 20px;
+
+    .contact {
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: $secondary-color;
+    }
+
+    @media (min-width:912px) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
+
+    .para-logo {
+        font-family: 'Shrikhand', cursive;
+        padding: 16px 0px;
+
+        @media (min-width:912px) {
+            padding: 0 50px;
+            font-size: $font-size18;
+        }
+    }
+
+    ul {
+        list-style: none;
+        font-size: $font-size14;
+        @extend %padding-bottom;
+
+        @media (min-width:912px) {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    }
+
+    li {
+        @extend %padding-bottom;
+
+        @media (min-width:912px) {
+            padding-right: 20px;
+        }
+    }
+}
+
+ul {
+    i.fa-solid.fa-utensils {
+        padding-right: 10px;
+    }
+
+    i.fa-solid.fa-handshake-angle {
+        padding-right: 5px;
+    }
+}
