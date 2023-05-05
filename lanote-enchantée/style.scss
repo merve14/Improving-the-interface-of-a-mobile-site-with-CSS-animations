@@ -25,38 +25,32 @@ $font-size18: 18px;
 $font-weight200: 200;
 
 /***************************************************************************************/
-@mixin nav-desktop {
-
-    @media (min-width:912px) {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-        margin-bottom: 15px;
-        width: 18%;
-    }
-}
-
-/***************************************************************************************/
-@mixin footer-desktop {
+@mixin footer {
     background: $footer-color;
-    color: #FFFFFF;
-    padding-left: 15px;
-    padding: 72px 0 20px;
+    color: $secondary-color;
+    padding: 4px 18px 20px;
 
     @media (min-width:912px) {
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-start;
+        align-items: baseline;
+        padding-left: 15px;
+        padding: 72px 0 20px;
     }
 
-    .para-logo {
-        font-family: 'Shrikhand', cursive;
-        padding: 16px 0px;
+    a {
+        text-decoration: none;
+        color: $secondary-color;
 
-        @media (min-width:912px) {
-            padding: 0 50px;
-            font-size: $font-size18;
+        .para-logo {
+            font-family: 'Shrikhand', cursive;
+            padding: 16px 0px;
+
+            @media (min-width:912px) {
+                padding: 0 50px;
+                font-size: $font-size18;
+            }
         }
     }
 
@@ -74,6 +68,7 @@ $font-weight200: 200;
 
     li {
         @extend %padding-bottom;
+        cursor: pointer;
 
         @media (min-width:912px) {
             padding-right: 20px;
@@ -166,7 +161,7 @@ $font-weight200: 200;
 
 .description-top {
     padding-bottom: 7px;
-    font-size: 16px;
+    font-size: $font-size16;
     @extend %trois-petit-point;
 }
 
@@ -177,28 +172,6 @@ $font-weight200: 200;
 
     @media (min-width:912px) {
         font-size: $font-size16;
-    }
-}
-
-/***************************************************************************************/
-@mixin footer {
-    background: $footer-color;
-    color: #FFFFFF;
-    padding-left: 25px;
-
-    p {
-        font-family: 'Shrikhand', cursive;
-        padding: 16px 0px;
-    }
-
-    ul {
-        list-style: none;
-        font-size: $font-size14;
-        @extend %padding-bottom;
-    }
-
-    li {
-        @extend %padding-bottom;
     }
 }
 
@@ -219,6 +192,9 @@ $font-weight200: 200;
         margin-right: auto;
     }
 }
+%padding-bottom {
+    padding-bottom: 10px;
+}
 
 /***************************************************************************************/
 nav {
@@ -236,14 +212,23 @@ nav {
         }
     }
 
+    @media (min-width:912px) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        width: 18%;
+    }
+
     i.fa-solid.fa-arrow-left {
-        padding-left: 30px;
+        padding-left: 15px;
     }
 
     .photo-logo {
         width: 50%;
-        margin-left: 52px;
-        margin-right: 57px;
+        margin-left: 46px;
+        margin-right: 80px;
         @include nav-desktop;
     }
 
@@ -258,6 +243,7 @@ nav {
     }
 }
 
+/***************************************************************************************/
 main {
     background: $primary-color;
     border-radius: 40px 40px 0px 0px;
@@ -295,7 +281,7 @@ main {
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            transition: transform, background-image 1s;
+            transition: opacity 3s ease-in-out;
             cursor: pointer;
 
             &:hover {
@@ -336,10 +322,10 @@ main {
 
 .entrées {
     padding: 0 8px;
-    font-size: 16px;
+    font-size: $font-size16;
     padding: 24px 0 15px 13px;
-    -webkit-animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: fadein 1.5s;
+    animation: menu-appear ease-in-out 1500ms backwards;
 
     @media (min-width:912px) {
         width: 60%;
@@ -354,38 +340,20 @@ main {
     }
 }
 
-@-webkit-keyframes puff-in-center {
+@keyframes menu-appear {
     0% {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
         opacity: 0;
     }
 
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes puff-in-center {
-    0% {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
-        opacity: 0;
+    50% {
+        opacity: .5;
     }
 
     100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -403,8 +371,7 @@ main {
 
 .plats {
     padding: 0 8px;
-    -webkit-animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: menu-appear ease-in-out 1500ms 1s backwards;
 
     .title {
         font-size: 16px;
@@ -420,8 +387,7 @@ main {
 
 .desserts {
     padding: 0 8px;
-    -webkit-animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation: puff-in-center 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: menu-appear ease-in-out 1500ms 2s backwards;
 
     .title {
         font-size: 16px;
@@ -443,25 +409,6 @@ main {
 
 }
 
-
-%padding-bottom {
-    padding-bottom: 10px;
-}
-
 footer {
-    background: $footer-color;
-    color: #FFFFFF;
-    padding-left: 15px;
-    padding: 72px 0 20px;
-
-    .contact {
-        cursor: pointer;
-    }
-
-    a {
-        text-decoration: none;
-        color: $secondary-color;
-    }
-
     @include footer-desktop;
 }

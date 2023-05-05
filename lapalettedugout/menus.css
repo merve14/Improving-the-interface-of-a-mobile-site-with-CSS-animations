@@ -51,7 +51,6 @@
 }
 
 /***************************************************************************************/
-/***************************************************************************************/
 @media (min-width: 912px) {
   .desserts .title {
     margin: 0;
@@ -80,12 +79,12 @@ nav .fleche .lien-vers-accueil {
   text-decoration: none;
 }
 nav i.fa-solid.fa-arrow-left {
-  padding-left: 30px;
+  padding-left: 15px;
 }
 nav .photo-logo {
   width: 50%;
-  margin-left: 52px;
-  margin-right: 57px;
+  margin-left: 46px;
+  margin-right: 80px;
 }
 @media (min-width: 912px) {
   nav .photo-logo {
@@ -145,7 +144,7 @@ main .h3-et-coeur i.fa-solid.fa-heart.fa-stack-1x {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  transition: transform, background-image 1s;
+  transition: opacity 3s ease-in-out;
   cursor: pointer;
 }
 main .h3-et-coeur i.fa-solid.fa-heart.fa-stack-1x:hover {
@@ -182,7 +181,7 @@ main .title:after {
   padding: 0 8px;
   font-size: 16px;
   padding: 24px 15px;
-  animation: puff-in-center 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: menu-appear ease-in-out 1500ms backwards;
 }
 @media (min-width: 912px) {
   .entrées {
@@ -200,15 +199,17 @@ main .title:after {
     margin: 0;
   }
 }
-@keyframes puff-in-center {
+
+@keyframes menu-appear {
   0% {
-    transform: scale(2);
-    filter: blur(4px);
+    transform: translateY(50px);
     opacity: 0;
   }
+  50% {
+    opacity: 0.5;
+  }
   100% {
-    transform: scale(1);
-    filter: blur(0px);
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -273,7 +274,7 @@ main .title:after {
 
 .plats {
   padding: 0 8px;
-  animation: puff-in-center 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: menu-appear ease-in-out 1500ms 1s backwards;
 }
 .plats .title {
   font-size: 16px;
@@ -295,7 +296,7 @@ main .title:after {
 
 .desserts {
   padding: 0 8px;
-  animation: puff-in-center 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: menu-appear ease-in-out 1500ms 2s backwards;
 }
 .desserts .title {
   font-size: 16px;
@@ -329,6 +330,7 @@ main .title:after {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
   color: rgba(255, 255, 255, 0.8117647059);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  transition: opacity 3s ease-in-out 2s;
 }
 @media (min-width: 912px) {
   .boutton-commander {
@@ -343,69 +345,47 @@ footer li, footer ul {
 footer {
   background: #353535;
   color: #FFFFFF;
-  padding-left: 25px;
+  padding-left: 15px;
+  padding: 72px 0 20px;
 }
-footer p {
-  font-family: "Shrikhand", cursive;
-  padding: 16px 0px;
-}
-footer ul {
-  list-style: none;
-  font-size: 13px;
-}
-footer .contact {
-  cursor: pointer;
+@media (min-width: 912px) {
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
 }
 footer a {
   text-decoration: none;
   color: #FFFFFF;
 }
-@media (min-width: 912px) {
-  footer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    align-items: baseline;
-    background: #353535;
-    color: #FFFFFF;
-    padding-left: 15px;
-    padding: 72px 0 20px;
-  }
-}
-@media (min-width: 912px) and (min-width: 912px) {
-  footer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-  }
+footer .para-logo {
+  font-family: "Shrikhand", cursive;
+  padding: 16px 0px;
 }
 @media (min-width: 912px) {
-  footer .para-logo {
-    font-family: "Shrikhand", cursive;
-    padding: 16px 0px;
-  }
-}
-@media (min-width: 912px) and (min-width: 912px) {
   footer .para-logo {
     padding: 0 50px;
     font-size: 18px;
   }
 }
-@media (min-width: 912px) {
-  footer ul {
-    list-style: none;
-    font-size: 13px;
-  }
+footer ul {
+  list-style: none;
+  font-size: 13px;
 }
-@media (min-width: 912px) and (min-width: 912px) {
+@media (min-width: 912px) {
   footer ul {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
   }
 }
-@media (min-width: 912px) and (min-width: 912px) {
+@media (min-width: 912px) {
   footer li {
     padding-right: 20px;
   }
+}
+footer a {
+  text-decoration: none;
+  color: #FFFFFF;
 }/*# sourceMappingURL=menus.css.map */
