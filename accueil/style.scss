@@ -33,7 +33,7 @@ $font-size18: 18px;
         margin-bottom: 5px;
         background: $secondary-color;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -79,7 +79,7 @@ $font-size18: 18px;
 
 /******************************************************************************************/
 @mixin title {
-    padding: 48px 0 30px 20px;
+    padding: 20px;
 }
 
 /******************************************************************************************/
@@ -90,7 +90,7 @@ $font-size18: 18px;
     font-size: $font-size14;
     cursor: pointer;
 
-    @media (min-width:912px) {
+    @media (min-width:768px) {
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-start;
@@ -110,7 +110,7 @@ $font-size18: 18px;
         font-family: 'Shrikhand', cursive;
         padding: 16px 0px;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             padding: 0 50px;
             font-size: $font-size18;
         }
@@ -121,7 +121,7 @@ $font-size18: 18px;
         font-size: $font-size14;
         @extend %padding-bottom;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             display: flex;
             flex-direction: row;
             align-items: flex-end;
@@ -131,7 +131,7 @@ $font-size18: 18px;
     li {
         @extend %padding-bottom;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             padding-right: 20px;
         }
 
@@ -229,7 +229,7 @@ $font-size18: 18px;
 
 /******************************************************************************************/
 nav {
-@include nav;
+    @include nav;
 }
 
 /******************************************************************************************/
@@ -242,7 +242,7 @@ header {
     h3 {
         padding: 20px 44px 20px 42px;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             font-size: 2rem;
         }
     }
@@ -252,7 +252,7 @@ header {
         font-size: $font-size14;
         font-weight: 300;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             font-size: $font-size16;
         }
     }
@@ -276,7 +276,7 @@ header {
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
         }
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             width: 15%;
         }
     }
@@ -286,28 +286,28 @@ header {
 .fonctionnement {
     padding: 20px;
 
-    @media (min-width:912px) {
+    @media (min-width:768px) {
         display: flex;
         flex-direction: column;
-        padding-left: 46px;
+        padding: 20px 10%;
     }
 }
 
 .boutton-fonctionnement {
-    @media (min-width:912px) {
+    @media (min-width:768px) {
         display: flex;
         flex-direction: row;
-        padding-right: 37px;
         justify-content: center;
         align-items: baseline;
+        padding: 20px;
+        gap: 39px;
     }
 }
 
 .h3-fonctionnement {
     @include title;
-
-    @media (min-width:912px) {
-        margin-left: 80px;
+    padding-left: 0;
+    @media (min-width:768px) {
         font-size: 24px;
     }
 
@@ -326,10 +326,9 @@ header {
 
 
 
-    @media (min-width:912px) {
-        width: 25%;
+    @media (min-width:768px) {
+        width: 100%;
         padding: 26px;
-        margin-right: 37px;
     }
 
     .circle-number {
@@ -373,6 +372,14 @@ header {
 main {
     background: $primary-color;
     padding-bottom: 66px;
+    padding: 20px;
+
+    @media (min-width:768px) {
+        section {
+            padding: 20px 10%;
+            padding-bottom: 60px;
+        }
+    }
 
     .lien-vers-menu {
         color: black;
@@ -380,11 +387,10 @@ main {
     }
 
     .restaurants {
-        @media (min-width:912px) {
-            display: flex;
-            row-gap: 30px;
-            column-gap: 30px;
-            justify-content: center;
+        @media (min-width:768px) {
+            display: grid;
+            grid-template-columns: 48% 48%;
+            grid-gap: 4%;
             flex-direction: row;
             flex-wrap: wrap;
             align-items: center;
@@ -393,10 +399,9 @@ main {
 
     .h3-restaurants {
         @include title;
-
-        @media (min-width:912px) {
+        padding-left: 0;
+        @media (min-width:768px) {
             font-size: 24px;
-            padding-left: 118px;
         }
     }
 
@@ -408,8 +413,8 @@ main {
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         position: relative;
 
-        @media (min-width:912px) {
-            width: 40%;
+        @media (min-width:768px) {
+        margin: 0;
         }
 
         .tag-nouveau {
@@ -473,7 +478,7 @@ i.fa-solid.fa-heart.fa-stack-1x {
         border-radius: 15px 15px 0 0;
         object-fit: cover;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             height: 220px;
             width: 100%;
             object-fit: cover;
@@ -484,7 +489,7 @@ i.fa-solid.fa-heart.fa-stack-1x {
     h4 {
         padding: 16px 0 5px 13px;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             font-size: $font-size18;
         }
 
