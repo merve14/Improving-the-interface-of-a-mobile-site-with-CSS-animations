@@ -19,7 +19,6 @@
 /***************************************************************************************/
 /***************************************************************************************/
 /***************************************************************************************/
-/***************************************************************************************/
 .content-price-checkbox {
   display: flex;
 }
@@ -44,26 +43,29 @@
   font-size: 13px;
   font-weight: 300;
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   .description-bottom {
     font-size: 16px;
   }
 }
 
 /***************************************************************************************/
-/***************************************************************************************/
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   .desserts .title, .plats .title {
     margin: 0;
   }
 }
 
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   .desserts, .plats {
-    width: 60%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+footer li, footer ul {
+  padding-bottom: 10px;
 }
 
 /***************************************************************************************/
@@ -78,23 +80,28 @@ nav .fleche {
 nav .fleche .lien-vers-accueil {
   color: black;
   text-decoration: none;
+  position: absolute;
+  left: 10px;
 }
-nav i.fa-solid.fa-arrow-left {
-  padding-left: 15px;
-}
-nav .photo-logo {
-  width: 50%;
-  margin-left: 46px;
-  margin-right: 80px;
-}
-@media (min-width: 912px) {
-  nav .photo-logo {
+@media (min-width: 768px) {
+  nav {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 15px;
-    width: 18%;
+    width: 100%;
+  }
+}
+nav i.fa-solid.fa-arrow-left {
+  padding-left: 15px;
+}
+nav .photo-logo {
+  width: 162px;
+}
+@media (min-width: 768px) {
+  nav .photo-logo {
+    width: 200px;
   }
 }
 nav .photo-accueil {
@@ -103,19 +110,20 @@ nav .photo-accueil {
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   nav .photo-accueil {
     height: 564px;
   }
 }
 
+/***************************************************************************************/
 main {
   background: #F6F6F6;
   border-radius: 40px 40px 0px 0px;
   position: relative;
   margin-top: -40px;
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   main {
     margin-top: -60px;
     width: 70%;
@@ -152,7 +160,7 @@ main .h3-et-coeur i.fa-solid.fa-heart.fa-stack-1x:hover {
   background-image: linear-gradient(#FF79DA, #9356DC);
   transform: scale(1);
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   main .h3-et-coeur {
     justify-content: center;
   }
@@ -163,7 +171,7 @@ main .h3-et-coeur h3 {
   padding-top: 32px;
   font-size: 24px;
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   main .h3-et-coeur h3 {
     padding-right: 24px;
     font-size: 28px;
@@ -181,18 +189,19 @@ main .title:after {
 .entrées {
   padding: 0 8px;
   font-size: 16px;
-  padding: 24px 0 15px 13px;
+  padding: 24px 15px;
+  padding-bottom: 15px;
   animation: fadein 1.5s;
   animation: menu-appear ease-in-out 1500ms backwards;
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   .entrées {
-    width: 60%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   .entrées .title {
     margin: 0;
   }
@@ -241,12 +250,12 @@ main .title:after {
 }
 
 .plats {
-  padding: 0 8px;
+  padding: 0 15px;
   animation: menu-appear ease-in-out 1500ms 1s backwards;
 }
 .plats .title {
   font-size: 16px;
-  padding: 24px 0 15px 13px;
+  padding: 7px 0 15px 13px;
 }
 .plats .h3-et-coeur {
   display: flex;
@@ -263,7 +272,7 @@ main .title:after {
 }
 
 .desserts {
-  padding: 0 8px;
+  padding: 0 15px;
   animation: menu-appear ease-in-out 1500ms 2s backwards;
 }
 .desserts .title {
@@ -284,29 +293,24 @@ main .title:after {
   font-size: 24px;
 }
 
-.boutton-commander {
+.commander {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.commander .boutton-commander {
   background: linear-gradient(193.33deg, #FF79DA -11.44%, #9356DC 123.93%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   color: #FFFFFF;
   padding: 15px 50px;
   border: none;
-  margin: 30px 0 40px 63px;
   cursor: pointer;
 }
-.boutton-commander:hover {
+.commander .boutton-commander:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
   color: rgba(255, 255, 255, 0.8117647059);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
-}
-@media (min-width: 912px) {
-  .boutton-commander {
-    margin-left: 200px;
-  }
-}
-
-footer li, footer ul {
-  padding-bottom: 10px;
 }
 
 footer {
@@ -314,7 +318,7 @@ footer {
   color: #FFFFFF;
   padding: 4px 18px 20px;
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   footer {
     display: flex;
     flex-direction: row-reverse;
@@ -328,12 +332,12 @@ footer a {
   text-decoration: none;
   color: #FFFFFF;
 }
-footer .para-logo {
+footer a .para-logo {
   font-family: "Shrikhand", cursive;
   padding: 16px 0px;
 }
-@media (min-width: 912px) {
-  footer .para-logo {
+@media (min-width: 768px) {
+  footer a .para-logo {
     padding: 0 50px;
     font-size: 18px;
   }
@@ -342,7 +346,7 @@ footer ul {
   list-style: none;
   font-size: 13px;
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   footer ul {
     display: flex;
     flex-direction: row;
@@ -352,12 +356,8 @@ footer ul {
 footer li {
   cursor: pointer;
 }
-@media (min-width: 912px) {
+@media (min-width: 768px) {
   footer li {
     padding-right: 20px;
   }
-}
-footer .contact a {
-  text-decoration: none;
-  color: #FFFFFF;
 }/*# sourceMappingURL=style.css.map */

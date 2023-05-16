@@ -58,7 +58,7 @@
 
 @media (min-width: 768px) {
   .desserts, .plats {
-    width: 80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -190,13 +190,13 @@ main .title:after {
   padding: 0 8px;
   font-size: 16px;
   padding: 24px 15px;
-  padding-bottom: 0;
+  padding-bottom: 15px;
   animation: fadein 1.5s;
   animation: menu-appear ease-in-out 1500ms backwards;
 }
 @media (min-width: 768px) {
   .entrées {
-    width: 80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -255,7 +255,7 @@ main .title:after {
 }
 .plats .title {
   font-size: 16px;
-  padding: 24px 0 15px 13px;
+  padding: 7px 0 15px 13px;
 }
 .plats .h3-et-coeur {
   display: flex;

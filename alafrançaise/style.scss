@@ -30,7 +30,7 @@ $font-weight200: 200;
     color: $secondary-color;
     padding: 4px 18px 20px;
 
-    @media (min-width:912px) {
+    @media (min-width:768px) {
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-start;
@@ -47,7 +47,7 @@ $font-weight200: 200;
             font-family: 'Shrikhand', cursive;
             padding: 16px 0px;
 
-            @media (min-width:912px) {
+            @media (min-width:768px) {
                 padding: 0 50px;
                 font-size: $font-size18;
             }
@@ -59,7 +59,7 @@ $font-weight200: 200;
         font-size: $font-size14;
         @extend %padding-bottom;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             display: flex;
             flex-direction: row;
             align-items: flex-end;
@@ -70,7 +70,7 @@ $font-weight200: 200;
         @extend %padding-bottom;
         cursor: pointer;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             padding-right: 20px;
         }
     }
@@ -85,7 +85,6 @@ $font-weight200: 200;
     color: $secondary-color;
     padding: 15px 50px;
     border: none;
-    margin: 30px 0 40px 63px;
     cursor: pointer;
 
     &:hover {
@@ -170,7 +169,7 @@ $font-weight200: 200;
     font-weight: 300;
     @extend %trois-petit-point;
 
-    @media (min-width:912px) {
+    @media (min-width:768px) {
         font-size: $font-size16;
     }
 }
@@ -179,15 +178,15 @@ $font-weight200: 200;
 
 %title-choix {
     .title {
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             margin: 0;
         }
     }
 }
 
 %media-query-choix {
-    @media (min-width:912px) {
-        width: 60%;
+    @media (min-width:768px) {
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -209,16 +208,18 @@ nav {
         .lien-vers-accueil {
             color: black;
             text-decoration: none;
+            position: absolute;
+            left: 10px;
         }
     }
 
-    @media (min-width:912px) {
+    @media (min-width:768px) {
         display: block;
         margin-left: auto;
         margin-right: auto;
         margin-top: 10px;
         margin-bottom: 15px;
-        width: 18%;
+        width: 100%;
     }
 
     i.fa-solid.fa-arrow-left {
@@ -226,10 +227,10 @@ nav {
     }
 
     .photo-logo {
-        width: 50%;
-        margin-left: 46px;
-        margin-right: 80px;
-        @include nav-desktop;
+        width: 162px;
+        @media (min-width:768px){
+            width: 200px;
+        }
     }
 
     .photo-accueil {
@@ -237,7 +238,7 @@ nav {
         height: 231px;
         object-fit: cover;
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             height: 564px;
         }
     }
@@ -250,7 +251,7 @@ main {
     position: relative;
     margin-top: -40px;
 
-    @media (min-width:912px) {
+    @media (min-width:768px) {
         margin-top: -60px;
         width: 70%;
         margin-left: 212px;
@@ -290,7 +291,7 @@ main {
             }
         }
 
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             justify-content: center;
         }
 
@@ -300,7 +301,7 @@ main {
             padding-top: 32px;
             font-size: 24px;
 
-            @media (min-width:912px) {
+            @media (min-width:768px) {
                 padding-right: 24px;
                 font-size: 28px;
             }
@@ -323,18 +324,19 @@ main {
 .entrées {
     padding: 0 8px;
     font-size: $font-size16;
-    padding: 24px 0 15px 13px;
+    padding: 24px 15px;
+    padding-bottom: 15px;
     animation: fadein 1.5s;
     animation: menu-appear ease-in-out 1500ms backwards;
 
-    @media (min-width:912px) {
-        width: 60%;
+    @media (min-width:768px) {
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
     }
 
     .title {
-        @media (min-width:912px) {
+        @media (min-width:768px) {
             margin: 0;
         }
     }
@@ -370,12 +372,12 @@ main {
 
 
 .plats {
-    padding: 0 8px;
+    padding: 0 15px;
     animation: menu-appear ease-in-out 1500ms 1s backwards;
 
     .title {
         font-size: 16px;
-        padding: 24px 0 15px 13px;
+        padding: 7px 0 15px 13px;
     }
 
     @extend %media-query-choix;
@@ -386,7 +388,7 @@ main {
 }
 
 .desserts {
-    padding: 0 8px;
+    padding: 0 15px;
     animation: menu-appear ease-in-out 1500ms 2s backwards;
 
     .title {
@@ -399,16 +401,17 @@ main {
     @include main-titre;
 
 }
+.commander {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 
 .boutton-commander {
     @include btn-menu;
 
-    @media (min-width:912px) {
-        margin-left: 200px;
-    }
-
 }
+ }
 
 footer {
-    @include footer-desktop;
+    @include footer;
 }
