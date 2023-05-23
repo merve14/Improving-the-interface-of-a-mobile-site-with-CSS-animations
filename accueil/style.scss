@@ -3,8 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 /***Roboto300**/
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-
 /****Shrikhand400****/
+
+/**************************************************************/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -12,7 +13,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/**************************************************************/
+//Les variables
 $primary-color: #F6F6F6;
 $secondary-color: #FFFFFF;
 $footer-color: #353535;
@@ -21,7 +22,20 @@ $font-size14: 14px;
 $font-size16: 16px;
 $font-size18: 18px;
 
-/**************************************************************/
+//Extend
+%padding-bottom {
+    padding-bottom: 10px;
+}
+
+%pr25px {
+    padding-right: 25px;
+}
+
+%pl10px {
+    padding-left: 10px;
+}
+
+//Mixin nav
 @mixin nav {
     img {
 
@@ -58,7 +72,7 @@ $font-size18: 18px;
     }
 }
 
-/******************************************************************************************/
+//Mixin bouton
 @mixin btn-menu {
     background: linear-gradient(193.33deg, #FF79DA -11.44%, #9356DC 123.93%);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -77,12 +91,12 @@ $font-size18: 18px;
 
 }
 
-/******************************************************************************************/
+//Mixin titre
 @mixin title {
     padding: 20px;
 }
 
-/******************************************************************************************/
+//Mixin footer
 @mixin footer {
     background: $footer-color;
     color: $secondary-color;
@@ -140,11 +154,9 @@ $font-size18: 18px;
             color: $secondary-color;
         }
     }
-
-
 }
 
-/*************************************************************************************/
+// Animation loader
 .center {
     display: flex;
     text-align: center;
@@ -227,12 +239,12 @@ $font-size18: 18px;
     }
 }
 
-/******************************************************************************************/
+//Barre de navigation
 nav {
     @include nav;
 }
 
-/******************************************************************************************/
+//Header
 header {
     background: $primary-color;
     text-align: center;
@@ -282,7 +294,7 @@ header {
     }
 }
 
-/******************************************************************************************/
+//Partie fonctionnement
 .fonctionnement {
     padding: 20px;
 
@@ -307,13 +319,14 @@ header {
 .h3-fonctionnement {
     @include title;
     padding-left: 0;
+
     @media (min-width:768px) {
         font-size: 24px;
     }
 
 }
 
-/******************************************************************************************/
+//Les chiffres entourés de cercle
 .fonctionnement-page {
     background: #F7F7F7;
     padding: 20px;
@@ -323,8 +336,6 @@ header {
     border-radius: 20px;
     width: 100%;
     position: relative;
-
-
 
     @media (min-width:768px) {
         width: 100%;
@@ -368,7 +379,7 @@ header {
     }
 }
 
-/******************************************************************************************/
+//Main
 main {
     background: $primary-color;
     padding-bottom: 66px;
@@ -400,6 +411,7 @@ main {
     .h3-restaurants {
         @include title;
         padding-left: 0;
+
         @media (min-width:768px) {
             font-size: 24px;
         }
@@ -414,7 +426,11 @@ main {
         position: relative;
 
         @media (min-width:768px) {
-        margin: 0;
+            margin: 0;
+        }
+
+        &:hover {
+            cursor: pointer;
         }
 
         .tag-nouveau {
@@ -432,45 +448,40 @@ main {
 
 }
 
-/******************************************************************************************/
-.card :hover {
-    cursor: pointer;
-}
-
+//Animation coeur sur les cards
 .h4-icon {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-end;
-}
 
-i.fa-regular.fa-heart {
-    padding-right: 20px;
-}
 
-i.fa-regular.fa-heart.fa-stack-1x.fa-inverse {
-    text-align: right;
-    color: black;
+    i.fa-regular.fa-heart {
+        padding-right: 20px;
+    }
 
-}
+    i.fa-regular.fa-heart.fa-stack-1x.fa-inverse {
+        text-align: right;
+        color: black;
+    }
 
-i.fa-solid.fa-heart.fa-stack-1x {
-    text-align: inherit;
-    padding-left: 4px;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    transition: opacity 3s ease-in-out;
+    i.fa-solid.fa-heart.fa-stack-1x {
+        text-align: inherit;
+        padding-left: 4px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: opacity 3s ease-in-out;
 
-    &:hover {
-        background-image: linear-gradient(#FF79DA, #9356DC);
-        transform: scale(1);
+        &:hover {
+            background-image: linear-gradient(#FF79DA, #9356DC);
+            transform: scale(1);
+        }
     }
 }
 
-
-/******************************************************************************************/
+//Les cards - restaurants
 .card {
     img {
         width: 100%;
@@ -501,20 +512,7 @@ i.fa-solid.fa-heart.fa-stack-1x {
     }
 }
 
-/******************************************************************************************/
-%padding-bottom {
-    padding-bottom: 10px;
-}
-
-%pr25px {
-    padding-right: 25px;
-}
-
-%pl10px {
-    padding-left: 10px;
-}
-
-/******************************************************************************************/
+//Footer
 footer {
     @include footer;
 }

@@ -14,11 +14,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-/***************************************************************************************/
-/***************************************************************************************/
-/***************************************************************************************/
-/***************************************************************************************/
-/***************************************************************************************/
 .content-price-checkbox {
   display: flex;
 }
@@ -49,7 +44,6 @@
   }
 }
 
-/***************************************************************************************/
 @media (min-width: 768px) {
   .desserts .title, .plats .title {
     margin: 0;
@@ -68,7 +62,12 @@ footer li, footer ul {
   padding-bottom: 10px;
 }
 
-/***************************************************************************************/
+.choix .description, .choix, .description-top, .description-bottom {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 nav .fleche {
   display: flex;
   flex-direction: row;
@@ -116,7 +115,6 @@ nav .photo-accueil {
   }
 }
 
-/***************************************************************************************/
 main {
   background: #F6F6F6;
   border-radius: 40px 40px 0px 0px;
@@ -220,12 +218,6 @@ main .title:after {
     opacity: 1;
   }
 }
-.choix .description, .choix, .description-top, .description-bottom {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .choix {
   background: #FFFFFF;
   width: 100%;
