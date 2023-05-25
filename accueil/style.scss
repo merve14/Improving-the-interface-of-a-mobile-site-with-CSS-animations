@@ -28,11 +28,11 @@ $font-size18: 18px;
 }
 
 %pr25px {
-    padding-right: 25px;
+    margin-right: 25px;
 }
 
 %pl10px {
-    padding-left: 10px;
+    margin-left: 10px;
 }
 
 //Mixin nav
@@ -336,10 +336,15 @@ header {
     border-radius: 20px;
     width: 100%;
     position: relative;
+    cursor: pointer;
 
     @media (min-width:768px) {
         width: 100%;
         padding: 26px;
+    }
+
+    &:hover {
+        background: #F7F7F7;
     }
 
     .circle-number {
@@ -361,17 +366,29 @@ header {
 
     i.fa-solid.fa-mobile-screen-button {
         @extend %pr25px;
-        @extend %pl10px
+        @extend %pl10px;
+
+        &:hover {
+            color: #9356DC;
+        }
     }
 
     i.fa-solid.fa-list-ul {
         @extend %pr25px;
-        @extend %pl10px
+        @extend %pl10px;
+
+        &:hover {
+            color: #9356DC;
+        }
     }
 
     i.fa-solid.fa-store {
         @extend %pr25px;
-        @extend %pl10px
+        @extend %pl10px;
+
+        &:hover {
+            color: #9356DC;
+        }
     }
 
     &.btn3 {
